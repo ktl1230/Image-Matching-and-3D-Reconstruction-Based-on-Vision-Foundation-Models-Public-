@@ -1,0 +1,47 @@
+# IDEs and Editors
+.vscode/
+.idea/
+
+# Secrets and Environment Variables
+.env
+*.pem
+secrets.json
+
+# Databases
+*.db
+*.sqlite3
+app.db
+backend/app.db
+
+# User Uploads and Datasets
+backend/projects/
+uploads/
+data/
+datasets/
+
+# Deep Learning Models and Weights
+models/
+*.pth
+*.pt
+*.onnx
+*.bin
+*.ckpt
+
+# Python Cache and Virtual Environments
+__pycache__/
+*.pyc
+venv/
+env/
+.venv/
+backend/venv/
+
+# Node.js Dependencies and Build
+node_modules/
+frontend/node_modules/
+dist/
+build/
+.npm/
+
+# OS Generated Files
+.DS_Store
+Thumbs.db

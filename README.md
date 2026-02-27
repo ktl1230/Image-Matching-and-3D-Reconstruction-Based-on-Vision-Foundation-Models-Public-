@@ -1,4 +1,4 @@
-# Image Matching and 3D Reconstruction System
+# Reconstruct.AI - Image Matching and 3D Reconstruction System
 
 A web-based platform for automatic image classification and 3D reconstruction from unordered image collections.
 
@@ -11,6 +11,12 @@ This system provides an end-to-end pipeline for processing large-scale image dat
 3. **3D Reconstruction**: Generates sparse point clouds via Structure-from-Motion
 4. **Interactive Visualization**: Displays 3D models in browser with Three.js
 
+## Inspiration
+
+This project draws inspiration from the **Kaggle Image Matching Challenge 2025**, which focuses on robust feature matching and 3D reconstruction from unordered image collections. I used publicly available image data from the competition during the experimental phase of my project.
+
+**Competition Link**: [Image Matching Challenge 2025 - Hexathlon](https://www.kaggle.com/competitions/image-matching-challenge-2025)
+
 ## Technical Stack
 
 ### Frontend
@@ -18,6 +24,7 @@ This system provides an end-to-end pipeline for processing large-scale image dat
 - **Styling**: Tailwind CSS v4
 - **3D Rendering**: Three.js with PLYLoader
 - **Routing**: React Router v6
+- **UI Themes**: Three customizable presets (Studio/Modern/Swiss)
 
 ### Backend
 - **API**: FastAPI with async support
@@ -89,6 +96,16 @@ This system provides an end-to-end pipeline for processing large-scale image dat
 
 ### Setup
 
+**Quick Start (Windows)**:
+```bash
+# One-click dependency installation
+INSTALL_ALL.bat
+
+# Launch backend and frontend
+START_ALL.bat
+```
+
+**Manual Setup**:
 ```bash
 # Install Python dependencies
 pip install -r backend/requirements.txt
@@ -100,8 +117,6 @@ cd backend && python main.py
 cd frontend && npm install && npm run dev
 ```
 
-Windows users can run `START_ALL.bat` for one-click startup.
-
 ## Usage
 
 1. Register/login to create an account
@@ -109,7 +124,10 @@ Windows users can run `START_ALL.bat` for one-click startup.
 3. Create a new project and upload images
 4. Run classification to group images by scene
 5. Navigate to 3D Viewer, select a group, and start reconstruction
-6. View and download the generated point cloud
+6. View the 3D point cloud in browser or download PLY/COLMAP files
+7. Check Geo Map tab for location visualization
+
+For detailed step-by-step instructions, see the **Tutorial** tab in the application dashboard.
 
 ## Reconstruction Parameters
 
@@ -130,12 +148,13 @@ Windows users can run `START_ALL.bat` for one-click startup.
 │   └── reconstructor.py     # ALIKED + LightGlue + pycolmap pipeline
 ├── frontend/
 │   └── src/
-│       ├── components/      # 3D Viewer, Dashboard components
+│       ├── components/      # Dashboard, 3D Viewer, Tutorial components
 │       └── pages/           # Login, Projects, Settings pages
 ├── agents/
 │   └── location_agent.py    # Multi-LLM voting agent
 ├── nets/                    # ALIKED model definition
-├── models/                  # Pre-trained weights
+├── reference materials/     # The materials I refer to
+├── INSTALL_ALL.bat          # Dependency installation script
 └── START_ALL.bat            # One-click startup script
 ```
 
@@ -145,6 +164,18 @@ Windows users can run `START_ALL.bat` for one-click startup.
 - **Batch Processing**: Efficient feature extraction with batching
 - **Top-k Selection**: Reduces O(n²) matching to manageable pairs for large datasets
 - **Chinese Path Support**: Temporary ASCII directories for pycolmap compatibility
+- **Responsive UI**: Three customizable themes with smooth animations
+
+## Features
+
+- ✅ End-to-end 3D reconstruction pipeline
+- ✅ AI-powered scene recognition and location identification
+- ✅ Interactive 3D point cloud visualization
+- ✅ Multi-provider AI integration (OpenAI/Claude/Gemini)
+- ✅ Batch image processing with progress tracking
+- ✅ Export to PLY and COLMAP formats
+- ✅ Built-in tutorial system
+- ✅ Responsive design with theme customization
 
 ## References
 
@@ -153,3 +184,10 @@ Windows users can run `START_ALL.bat` for one-click startup.
 - LightGlue: Local Feature Matching at Light Speed (ETH Zurich, 2023)
 - COLMAP: Structure-from-Motion Revisited (Schönberger & Frahm, 2016)
 
+## License
+
+MIT License
+
+---
+
+Graduation Project · Fujian Normal University & University of Huddersfield · 2026
